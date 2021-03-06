@@ -37,7 +37,8 @@ suppression, and hysteresis thresholding to find the true edges. You should atte
 as possible including the threshold selection. Compare the results you obtain using your implementation with those
 of a standard package. Matlab has a Canny edge detector implemented which you can call with various parameter
 values. The function is edge(). The parameters will include sigma for the Gaussian and the two threshold values for the
-hysteresis thresholding. (see the link.) You can compare your results to that of the Matlab implementation.
+hysteresis thresholding. (see the link.) You can compare your results to that of the OpenCV implementation.
+
 <img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/canny%20building.png" width="600" height="400">
 
 
@@ -50,7 +51,7 @@ clean transform space, implement the version of Hough transform that uses the gr
 the Hough transform. The Hough transform for straight lines gives you the parameters of infinite straight lines. Now
 you have to decide which points in the image belong to which straight lines. This is called the back-projection. After
 you have identified the edge points that belong to one straight line, do an eigenvector line fitting to obtain the optimal
-straight line parameters. Use the normal equations of the line for building the Hough parameter space. Also apply **RANSAC** for line detectio.
+straight line parameters. Use the normal equations of the line for building the Hough parameter space. Also apply **RANSAC** for line detection.
 <img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/hough%20pillset.png" width="600" height="400">
 <img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/ransac%20pills.png" width="600" height="400">
 
@@ -64,7 +65,7 @@ or not?
 4. How to perform the peak detection? Thresholding?
 5. How to do the back projection? etc.
 
-### Project 4
+### Project 4 Segmentation/Connected Componenet/Statistical Features
 
 1. Do the segmentation of the image based on an analysis of the intensities in the image
 (i.e. create a histogram, decide on a threshold and do the segmentation). Use a simple
@@ -75,8 +76,12 @@ smoothing the histogram is done with a 1D filter on the 1D array. Use the follow
 averaging mask to accomplish this task: (1/9,2/9,3/9,2/9,1/9). How you will define a
 valley is up to you.
 
+<img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Segment-CCA-feature/coin_segment.png" width="600" height="400">
+
 2. Perform a connected component analysis on the resulting binary image of step 1. Use
-4-connected neighbor definition and the algorithm described in class for this.
+4-connected neighbor definition and the algorithm.
+
+<img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Segment-CCA-feature/cca%20shapes4.png" width="600" height="400">
 
 3. For each component identified compute some features that will be useful in describing
 its shape. The features you are to compute are the following:
@@ -85,4 +90,17 @@ its shape. The features you are to compute are the following:
 (c) Second order moments around the centroid (i.e., central moments).
 (d) Perimeter, P
 (e) Compactness measure 
-(f) An elongation measure computed from second order
+(f) An elongation measure computed from second order  
+Example:  
+Shapes found :  5  
+Moments for shape 1  
+Center (41, 100)  
+Area 856.5  
+mu20 0.11653354147302813  
+mu02 0.08105050376576435  
+mu11 0.025920526449833337  
+Perimeter 139.43859779834747  
+Compactness 1.8064618003059207  
+Elongation 0.4911668348129967  
+
+<img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Segment-CCA-feature/feature%20shape1.png" width="600" height="400">
