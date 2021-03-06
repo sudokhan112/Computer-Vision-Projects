@@ -3,6 +3,8 @@
 ### Project 1: Camera Calibration
 In this project, you will implement camera calibration as described in your textbook and lectures. You will be given
 information about a calibration rig and a picture of the rig as part of the given data for this project.
+![alt text](https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Camera-calibration/calibration-rig.jpg)
+
 ### Project 2: Low level image processing
 - Implement a histogram equalization program that flattens the histogram of the input image as described in lecture by creating a mapping function c(I) based on the histogram of the original image.
 - Implement a function that does a log mapping of the input image (thus enhancing the detail in dark regions).
