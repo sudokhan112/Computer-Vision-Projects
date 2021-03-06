@@ -21,31 +21,38 @@ information about a calibration rig and a picture of the rig as part of the give
 - Implement the **median filter**. Use 3 x 3 neighborhood.
 
 
-### Project 3
+### Project 3 Corner-Edge-Line Detection
 - Corner Detection:
 
-Implement the Harris-Stephens corner detection method. Test your implementation on images. You will need to
+Implement the **Harris-Stephens corner detection** method. Test your implementation on images. You will need to
 implement the thresholding and nonmaxima suppression to obtain your corners in the image. Matlab has an implementation
 of the corner detector called corner(). (see http://www.mathworks.com/help/images/ref/corner.html)
 You can compare the results of your implementation to that of Matlab function.
+<img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/harris%20keys.png" width="600" height="400">
+
 - Edge detection:
 
-Implement the Canny edge detector. This will include implementing the directional Gaussian derivatives, non-maxima
+Implement the **Canny edge detector**. This will include implementing the directional Gaussian derivatives, non-maxima
 suppression, and hysteresis thresholding to find the true edges. You should attempt to automate the process as much
 as possible including the threshold selection. Compare the results you obtain using your implementation with those
 of a standard package. Matlab has a Canny edge detector implemented which you can call with various parameter
 values. The function is edge(). The parameters will include  for the Gaussian and the two threshold values for the
 hysteresis thresholding. (see the link.) You can compare your results to that of the Matlab implementation.
+<img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/canny%20building.png" width="600" height="400">
+
+
 - Line detection and fitting:
 
-Write a program that will take the output edges detected in Section 1.2 and organize them into more abstract structures.
-The higher level structures you are to detect are straight lines. You will do this by using the Hough transform.
+Write a program that will take the output edges detected in previous section and organize them into more abstract structures.
+The higher level structures you are to detect are straight lines. You will do this by using the **Hough transform**.
 Implement the Hough transform to detect straight lines from the edge images. In order to work with a reasonably
 clean transform space, implement the version of Hough transform that uses the gradient direction of the edges to build
 the Hough transform. The Hough transform for straight lines gives you the parameters of infinite straight lines. Now
 you have to decide which points in the image belong to which straight lines. This is called the back-projection. After
 you have identified the edge points that belong to one straight line, do an eigenvector line fitting to obtain the optimal
-straight line parameters. Use the normal equations of the line for building the Hough parameter space.
+straight line parameters. Use the normal equations of the line for building the Hough parameter space. Also apply **RANSAC** for line detectio.
+<img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/hough%20pillset.png" width="600" height="400">
+<img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/ransac%20pills.png" width="600" height="400">
 
 Some of the issues you have to deal with are:
 1. How to get the parameters from the position and gradient direction information? For example, consider the
