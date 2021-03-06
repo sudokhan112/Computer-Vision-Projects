@@ -36,7 +36,7 @@ Implement the **Canny edge detector**. This will include implementing the direct
 suppression, and hysteresis thresholding to find the true edges. You should attempt to automate the process as much
 as possible including the threshold selection. Compare the results you obtain using your implementation with those
 of a standard package. Matlab has a Canny edge detector implemented which you can call with various parameter
-values. The function is edge(). The parameters will include  for the Gaussian and the two threshold values for the
+values. The function is edge(). The parameters will include sigma for the Gaussian and the two threshold values for the
 hysteresis thresholding. (see the link.) You can compare your results to that of the Matlab implementation.
 <img src="https://github.com/sudokhan112/Computer-Vision-Projects/blob/main/Corner-edge-line/canny%20building.png" width="600" height="400">
 
